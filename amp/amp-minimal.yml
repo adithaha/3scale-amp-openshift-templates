@@ -899,10 +899,10 @@ objects:
           resources:
             limits:
               cpu: "400m"
-              memory: 600Mi
+              memory: 400Mi
             requests:
               cpu: 300m
-              memory: 400Mi
+              memory: 200Mi
         serviceAccountName: amp
     test: false
     triggers:
