@@ -329,11 +329,11 @@ objects:
             timeoutSeconds: 1
           resources:
             limits:
-              cpu: "2"
-              memory: 32Gi
+              cpu: "200m"
+              memory: 128Mi
             requests:
-              cpu: "1"
-              memory: 1Gi
+              cpu: "50m"
+              memory: 32Mi
           volumeMounts:
           - mountPath: /var/lib/redis/data
             name: backend-redis-storage
@@ -548,11 +548,11 @@ objects:
             timeoutSeconds: 5
           resources:
             limits:
-              cpu: 500m
-              memory: 32Gi
+              cpu: 200m
+              memory: 128Mi
             requests:
-              cpu: 150m
-              memory: 256Mi
+              cpu: 50m
+              memory: 32Mi
           terminationMessagePath: /dev/termination-log
           volumeMounts:
           - mountPath: /var/lib/redis/data
@@ -917,11 +917,11 @@ objects:
             timeoutSeconds: 5
           resources:
             limits:
-              cpu: "1"
-              memory: 700Mi
+              cpu: "400m"
+              memory: 400Mi
             requests:
-              cpu: 500m
-              memory: 550Mi
+              cpu: 300m
+              memory: 200Mi
         serviceAccountName: amp
     test: false
     triggers:
@@ -1067,10 +1067,10 @@ objects:
           name: backend-worker
           resources:
             limits:
-              cpu: "1"
-              memory: 300Mi
+              cpu: "200m"
+              memory: 200Mi
             requests:
-              cpu: 150m
+              cpu: 100m
               memory: 50Mi
         initContainers:
         - command:
@@ -1259,9 +1259,10 @@ objects:
             timeoutSeconds: 5
           resources:
             limits:
-              memory: 2Gi
+              cpu: 300m
+              memory: 600Mi
             requests:
-              cpu: 250m
+              cpu: 200m
               memory: 512Mi
           volumeMounts:
           - mountPath: /var/lib/mysql/data
@@ -2238,7 +2239,7 @@ objects:
             timeoutSeconds: 10
           resources:
             limits:
-              cpu: "1"
+              cpu: "250m"
               memory: 800Mi
             requests:
               cpu: 50m
@@ -2536,7 +2537,7 @@ objects:
             timeoutSeconds: 10
           resources:
             limits:
-              cpu: "1"
+              cpu: "250m"
               memory: 800Mi
             requests:
               cpu: 50m
@@ -2833,7 +2834,7 @@ objects:
             timeoutSeconds: 10
           resources:
             limits:
-              cpu: "1"
+              cpu: "250m"
               memory: 800Mi
             requests:
               cpu: 50m
@@ -3170,11 +3171,11 @@ objects:
           name: system-sidekiq
           resources:
             limits:
-              cpu: "1"
-              memory: 2Gi
+              cpu: "300m"
+              memory: 400Mi
             requests:
               cpu: 100m
-              memory: 500Mi
+              memory: 200Mi
           volumeMounts:
           - mountPath: /opt/system/public/system
             name: system-storage
@@ -3378,11 +3379,11 @@ objects:
           name: system-sphinx
           resources:
             limits:
-              cpu: "1"
-              memory: 512Mi
+              cpu: "200m"
+              memory: 300Mi
             requests:
               cpu: 80m
-              memory: 250Mi
+              memory: 200Mi
           volumeMounts:
           - mountPath: /opt/system/db/sphinx
             name: system-sphinx-database
@@ -3663,11 +3664,11 @@ objects:
             timeoutSeconds: 10
           resources:
             limits:
-              cpu: "1"
-              memory: 512Mi
+              cpu: "300m"
+              memory: 250Mi
             requests:
               cpu: 150m
-              memory: 250M
+              memory: 100M
         initContainers:
         - command:
           - bash
@@ -3790,11 +3791,11 @@ objects:
             protocol: TCP
           resources:
             limits:
-              cpu: "1"
-              memory: 512Mi
+              cpu: "300m"
+              memory: 250Mi
             requests:
-              cpu: 250m
-              memory: 250M
+              cpu: 150m
+              memory: 100M
         restartPolicy: Always
         serviceAccountName: zync-que-sa
         terminationGracePeriodSeconds: 30
@@ -3875,10 +3876,10 @@ objects:
           resources:
             limits:
               cpu: 250m
-              memory: 2G
+              memory: 250Mi
             requests:
               cpu: 50m
-              memory: 250M
+              memory: 200M
           volumeMounts:
           - mountPath: /var/lib/pgsql/data
             name: zync-database-data
@@ -4168,10 +4169,10 @@ objects:
             timeoutSeconds: 5
           resources:
             limits:
-              cpu: "1"
+              cpu: "200m"
               memory: 128Mi
             requests:
-              cpu: 500m
+              cpu: 100m
               memory: 64Mi
         initContainers:
         - command:
