@@ -1,7 +1,11 @@
 
 This repository contains the OpenShift Templates for the Red Hat 3scale API Management Platform.
 
-
+Get user from here: 
+ ```
+ https://access.redhat.com/terms-based-registry/
+ ```
+ 
  ```
 oc new-project anugraha-3scale
 oc create secret docker-registry redhat-registry \
